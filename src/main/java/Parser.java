@@ -48,9 +48,18 @@ public class Parser {
 
         CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
-        CustomVisitor visitor = new CustomVisitor();
+        CustomVisitor visitor = new CustomVisitor(cu);
         cu.accept(visitor);
 
+        for (NodeInfo w : visitor.getWhileInfo()) {
+
+            System.out.println("----------------------------------------------------------------------------");
+            System.out.println("Package: " + w.getPackageDeclaration());
+            System.out.println("Start position: " + w.getStartPosition().toString());
+            System.out.println("End position: " + w.getEndPosition().toString());
+        }
+
+        /*
         System.out.println("----------------------------------------------------------------------------");
         System.out.println("Package information:");
 
@@ -78,5 +87,13 @@ public class Parser {
         for (MethodInvocation m : visitor.getMethodInvocations()) {
             System.out.println("Method name: " + m.getName() + ", Arguments: " + m.arguments() + ", Expression: " + m.getExpression());
         }
+
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("String literals:");
+
+        for (StringLiteral s : visitor.getStringLiterals()) {
+            System.out.println("Literal value: " + s.getLiteralValue() + " Escaped value: " + s.getEscapedValue());
+        }
+        */
     }
 }
