@@ -1,6 +1,5 @@
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.ModuleDeclaration;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
 
 import java.awt.*;

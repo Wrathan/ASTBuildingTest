@@ -48,7 +48,7 @@ public class Parser {
 
         CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
-        CustomVisitor visitor = new CustomVisitor(cu);
+        AstVisitor visitor = new AstVisitor(cu);
         cu.accept(visitor);
 
         for (NodeInfo w : visitor.getWhileInfo()) {

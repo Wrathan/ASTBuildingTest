@@ -2,12 +2,12 @@ import org.eclipse.jdt.core.dom.*;
 
 import java.util.ArrayList;
 
-public class CustomVisitor extends ASTVisitor {
+public class AstVisitor extends ASTVisitor {
 
     private CompilationUnit cu;
     private ArrayList<NodeInfo> whileInfo;
 
-    public CustomVisitor(CompilationUnit cu) {
+    public AstVisitor(CompilationUnit cu) {
         this.cu = cu;
         this.whileInfo = new ArrayList<>();
     }
